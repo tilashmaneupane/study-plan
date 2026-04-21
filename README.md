@@ -1,16 +1,72 @@
-# React + Vite
+📚 1st Sem: Study Plan 🏔️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-performance, dark-themed study dashboard to manage the final sprint toward the Baisakh 27 Board Exams.
 
-Currently, two official plugins are available:
+🚀 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Dual Calendar System: Real-time tracking of both Nepali (BS) and Gregorian (AD) dates.
 
-## React Compiler
+Exam Countdown: A persistent countdown timer targeting the board exam on 27 Baisakh 2083.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Board Prep Status: Dynamic progress bars for the 5 core 1st-semester subjects:
 
-## Expanding the ESLint configuration
+Physics
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Maths I
+
+C Programming
+
+IIT
+
+Digital Logic
+
+Study vs. Coding Split: A specialized logic tracker ensuring a 60/40 balance between academic revision and technical skill-building (Cyber Security & Web Dev).
+
+Interactive Roadmap: An editable 19-day "Sprint Plan" to manage weekly milestones.
+
+
+🛠️ Tech Stack
+
+Framework: React (via Vite)
+
+Styling: Tailwind CSS
+
+Icons: Lucide React
+
+Deployment: GitHub Pages
+
+💻 Local Setup (Windows)
+
+Clone the repository:
+
+git clone [https://github.com/YOUR_USERNAME/my-study-plan.git](https://github.com/YOUR_USERNAME/my-study-plan.git)
+cd my-study-plan
+
+
+Install dependencies:
+
+npm install
+
+
+Run the development server:
+
+npm run dev
+
+
+Build for production:
+
+npm run build
+
+
+🌐 Deployment
+
+This project is configured for automated deployment via gh-pages. To push updates to the live site, run:
+
+npm run deploy
+
+
+📝 License
+
+This project is customized for personal academic use.
+
+Success is the sum of small efforts, repeated day-in and day-out. Good luck with the boards!
