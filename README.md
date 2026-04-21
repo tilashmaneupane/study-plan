@@ -4,7 +4,7 @@ A high-performance, dark-themed study dashboard to manage the final sprint towar
 🌐 Live Demo
 Check it out here:
 
-👉 🔗 View Live Website
+👉 [View Live Website](https://tilashmaneupane.github.io/study-plan/)
 
 🚀 Key Features
 
