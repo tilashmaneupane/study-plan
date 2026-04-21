@@ -1,6 +1,10 @@
 📚 1st Sem: Study Plan 🏔️
 
 A high-performance, dark-themed study dashboard to manage the final sprint toward the Baisakh 27 Board Exams.
+🌐 Live Demo
+Check it out here:
+
+👉 🔗 View Live Website
 
 🚀 Key Features
 
