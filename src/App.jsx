@@ -28,9 +28,47 @@ import {
 } from 'lucide-react';
 
 const App = () => {
+  // --- Nepali Date Converter Logic ---
+  const getNepaliDate = (date = new Date()) => {
+    // 2083 BS starts on April 14, 2026 AD
+    const bsStart = new Date('2026-04-14');
+    const timeDiff = date.getTime() - bsStart.getTime();
+    const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+    // Days in each month for 2083 (Typical counts, BS months vary annually)
+    const monthDays = [31, 31, 32, 32, 31, 30, 30, 29, 30, 29, 30, 30];
+    const monthNames = [
+      "Baisakh", "Jestha", "Ashad", "Shrawan", "Bhadra", "Ashwin", 
+      "Kartik", "Mangsir", "Poush", "Magh", "Falgun", "Chaitra"
+    ];
+
+    let totalDays = daysDiff;
+    let monthIndex = 0;
+    
+    // Check if we are actually in 2083
+    if (totalDays < 0) return "Before 2083 BS";
+    
+    while (totalDays >= monthDays[monthIndex]) {
+      totalDays -= monthDays[monthIndex];
+      monthIndex++;
+      if (monthIndex >= 12) return "End of 2083 BS";
+    }
+
+    return `${totalDays + 1} ${monthNames[monthIndex]} 2083`;
+  };
+
   // --- State & Constants ---
   const [activeTab, setActiveTab] = useState('dashboard');
+  const [nepaliToday, setNepaliToday] = useState(getNepaliDate());
   
+  // Refresh Nepali date every hour
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setNepaliToday(getNepaliDate());
+    }, 3600000);
+    return () => clearInterval(timer);
+  }, []);
+
   // Persistence for Logs
   const [logs, setLogs] = useState(() => {
     const saved = localStorage.getItem('tilashma_logs_v2');
@@ -41,10 +79,10 @@ const App = () => {
   const [milestones, setMilestones] = useState(() => {
     const saved = localStorage.getItem('tilashma_roadmap');
     return saved ? JSON.parse(saved) : [
-      { id: 1, title: 'Week 1: Foundations (Baisakh 7-13)', main: 'Past Paper Analysis', sub: 'C Loops & Physics Units', status: 'In Progress' },
-      { id: 2, title: 'Week 2: Advanced (Baisakh 14-20)', main: 'Numerical Blitz', sub: 'C Arrays & Matrix Algebra', status: 'Not Started' },
-      { id: 3, title: 'Final Week: Revision (Baisakh 21-26)', main: 'Mock Boards', sub: 'Digital Logic Circuits', status: 'Not Started' },
-      { id: 4, title: 'EXAM DAY', main: 'Baisakh 27, 2083', sub: 'Board Center Appearance', status: 'Target' },
+      { id: 1, title: 'Week 1: Foundations', main: 'Past Paper Analysis', sub: 'C Loops & Physics Units', status: 'In Progress' },
+      { id: 2, title: 'Week 2: Advanced', main: 'Numerical Blitz', sub: 'C Arrays & Matrix Algebra', status: 'Not Started' },
+      { id: 3, title: 'Final Week: Revision', main: 'Mock Boards', sub: 'Digital Logic Circuits', status: 'Not Started' },
+      { id: 4, title: 'EXAM DAY', main: '27 Baisakh 2083', sub: 'Board Center Appearance', status: 'Target' },
     ];
   });
 
@@ -73,7 +111,6 @@ const App = () => {
   // Board Exam Date: 27 Baisakh 2083 BS = May 10, 2026 AD
   const targetDate = new Date('2026-05-10'); 
   const nepaliExamDate = "27 Baisakh 2083";
-  const nepaliToday = "7 Baisakh 2083";
   const englishToday = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
 
   const subjects = [
