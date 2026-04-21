@@ -39,7 +39,7 @@ Deployment: GitHub Pages
 
 Clone the repository:
 
-git clone [https://github.com/YOUR_USERNAME/my-study-plan.git](https://github.com/YOUR_USERNAME/my-study-plan.git)
+git clone [https://github.com/tilashmaneupane/study-plan.git]
 cd my-study-plan
 
 
