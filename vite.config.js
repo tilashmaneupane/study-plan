@@ -7,10 +7,3 @@ export default defineConfig({
   base: '/study-plan/', // Important for GitHub subfolders!
 })
 
-import tailwindcss from '@tailwindcss/vite'
-
-export default defineConfig({
-  plugins: [
-    tailwindcss(),
-  ],
-})
