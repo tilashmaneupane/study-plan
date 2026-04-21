@@ -35,27 +35,6 @@ Icons: Lucide React
 
 Deployment: GitHub Pages
 
-💻 Local Setup (Windows)
-
-Clone the repository:
-
-git clone [https://github.com/tilashmaneupane/study-plan.git]
-cd my-study-plan
-
-
-Install dependencies:
-
-npm install
-
-
-Run the development server:
-
-npm run dev
-
-
-Build for production:
-
-npm run build
 
 
 🌐 Deployment
